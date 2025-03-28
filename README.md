@@ -1,6 +1,6 @@
 # Modern Todo List Application
 
-A beautiful and feature-rich todo list application built with Next.js 14, TypeScript, Tailwind CSS, and Shadcn UI. Try it out here: [Todo List App](https://todo-list-ruddy-nine.vercel.app/)
+A beautiful and feature-rich todo list application built with Next.js 15, TypeScript, Tailwind CSS, and Shadcn UI. Try it out here: [Todo List App](https://todo-list-ruddy-nine.vercel.app/)
 
 ## Features
 
