@@ -149,14 +149,16 @@ export function TodoList({ onEdit }: { onEdit: (todo: Todo) => void }) {
       <motion.div
         initial={{ y: -20 }}
         animate={{ y: 0 }}
-        className="flex flex-col gap-4 sm:flex-row sm:items-center"
+        className="flex flex-col gap-4 sm:flex-row sm:items-center w-full"
       >
-        <TodoSearch
-          value={filters.search}
-          onChange={(value: string) => setFilters({ search: value })}
-          className="sm:flex-[2]"
-        />
-        <div className="flex gap-2 sm:flex-1">
+        <div className="w-full sm:w-[60%]">
+          <TodoSearch
+            value={filters.search}
+            onChange={(value: string) => setFilters({ search: value })}
+            className="w-full"
+          />
+        </div>
+        <div className="flex gap-2 w-full sm:w-[40%]">
           <TodoFilters
             value={filters.filter}
             onValueChange={(value: FilterType) => {
@@ -165,7 +167,7 @@ export function TodoList({ onEdit }: { onEdit: (todo: Todo) => void }) {
               }
               setFilters({ filter: value });
             }}
-            className="flex-1"
+            className="w-full"
           />
           <TodoSort
             value={filters.sort}
@@ -175,7 +177,7 @@ export function TodoList({ onEdit }: { onEdit: (todo: Todo) => void }) {
               }
               setFilters({ sort: value });
             }}
-            className="flex-1"
+            className="w-full"
           />
         </div>
       </motion.div>
