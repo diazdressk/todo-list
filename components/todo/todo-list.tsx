@@ -46,7 +46,7 @@ const TodoItemComponent = memo(function TodoItemComponent({
       transition={{ duration: 0.2 }}
       layout
     >
-      <Card className="group overflow-hidden border-muted/30 hover:border-muted/50 transition-all duration-200 ">
+      <Card className="group overflow-hidden border-muted/30 hover:border-muted/50 transition-all duration-200 p-0">
         <CardContent className="p-0">
           <div className="flex items-start gap-4 p-4">
             <motion.div whileTap={{ scale: 0.9 }} className="flex items-start pt-1">
