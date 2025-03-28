@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { useTodo } from "@/lib/store";
 import { TodoSchema, type Todo, type TodoFormData } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -113,7 +114,11 @@ export function TodoForm({ todoToEdit, onCancel }: TodoFormProps) {
               <FormItem>
                 <FormLabel>Description</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter todo description..." {...field} />
+                  <Textarea 
+                    placeholder="Enter todo description..." 
+                    className="min-h-[100px] resize-y"
+                    {...field} 
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
