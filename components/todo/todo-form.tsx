@@ -1,34 +1,20 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { useTodo } from "@/lib/store";
-import { TodoSchema, type Todo, type TodoFormData } from "@/lib/types";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+'use client';
+import { useTodo } from '@/lib/store';
+import { TodoSchema, type Todo, type TodoFormData } from '@/lib/types';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { Button } from '../ui/button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
+import { Input } from '../ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { Textarea } from '../ui/textarea';
 
 const priorities = [
-  { label: "Low", value: "low" },
-  { label: "Medium", value: "medium" },
-  { label: "High", value: "high" },
+  { label: 'Low', value: 'low' },
+  { label: 'Medium', value: 'medium' },
+  { label: 'High', value: 'high' },
 ] as const;
 
 interface TodoFormProps {
@@ -41,10 +27,10 @@ export function TodoForm({ todoToEdit, onCancel }: TodoFormProps) {
   const form = useForm<TodoFormData>({
     resolver: zodResolver(TodoSchema.omit({ id: true, createdAt: true, updatedAt: true })),
     defaultValues: {
-      title: "",
-      description: "",
+      title: '',
+      description: '',
       completed: false,
-      priority: todoToEdit?.priority || "medium",
+      priority: todoToEdit?.priority || 'medium',
     },
   });
 
@@ -52,16 +38,16 @@ export function TodoForm({ todoToEdit, onCancel }: TodoFormProps) {
     if (todoToEdit) {
       form.reset({
         title: todoToEdit.title,
-        description: todoToEdit.description || "",
+        description: todoToEdit.description || '',
         priority: todoToEdit.priority,
         completed: todoToEdit.completed,
       });
     } else {
       form.reset({
-        title: "",
-        description: "",
+        title: '',
+        description: '',
         completed: false,
-        priority: "medium",
+        priority: 'medium',
       });
     }
   }, [todoToEdit, form]);
@@ -114,10 +100,10 @@ export function TodoForm({ todoToEdit, onCancel }: TodoFormProps) {
               <FormItem>
                 <FormLabel>Description</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="Enter todo description..." 
+                  <Textarea
+                    placeholder="Enter todo description..."
                     className="min-h-[100px] resize-y"
-                    {...field} 
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
@@ -164,11 +150,7 @@ export function TodoForm({ todoToEdit, onCancel }: TodoFormProps) {
           className="flex justify-end gap-2"
         >
           {todoToEdit && (
-            <Button
-              type="button"
-              variant="outline"
-              onClick={onCancel}
-            >
+            <Button type="button" variant="outline" onClick={onCancel}>
               Cancel
             </Button>
           )}
@@ -176,10 +158,10 @@ export function TodoForm({ todoToEdit, onCancel }: TodoFormProps) {
             type="submit"
             className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white"
           >
-            {todoToEdit ? "Update Todo" : "Add Todo"}
+            {todoToEdit ? 'Update Todo' : 'Add Todo'}
           </Button>
         </motion.div>
       </form>
     </Form>
   );
-} 
+}
