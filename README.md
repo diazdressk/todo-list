@@ -1,19 +1,3 @@
-# Modern Todo List Application
-
-A beautiful and feature-rich todo list application built with Next.js 15, TypeScript, Tailwind CSS, and Shadcn UI. Try it out here: [Todo List App](https://todo-list-ruddy-nine.vercel.app/)
-
-## Features
-
-- 🎯 Create, edit, and delete todos
-- 🔍 Search functionality
-- 🔄 Filter by status (All, Active, Completed)
-- 📊 Sort by date, priority, or title
-- 🌓 Dark/Light mode support
-- 💾 Persistent storage
-- 📱 Responsive design
-- ✨ Beautiful animations
-- ♿ Accessible components
-
 ## Prerequisites
 
 - Node.js 18.17.0 or later
@@ -65,18 +49,9 @@ todo-list/
 └── public/          # Static assets
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Live Demo
 
 Check out the live demo: [https://todo-list-ruddy-nine.vercel.app/](https://todo-list-ruddy-nine.vercel.app/)
+
+
+PS код полностью писали sonnet 3.7 и gemini 2.5, в продакшне я код пишу чище, лучше)
